@@ -1,59 +1,50 @@
+
+var path = require('path');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    karma: {
-      unit: {
-        configFile: './public/javascripts/spec/karma.conf.js'
+    express: {
+      options: {
+        port: process.env.PORT || 3000,
+        hostname: 'localhost'
+      },
+      test: {
+        options: {
+          server: path.resolve('./app')
+        },
       }
     },
-
+    karma: {
+      options: {
+        configFile: './public/javascripts/spec/karma.conf.js'
+      },
+      run: {
+      }
+    },
     protractor: {
       options: {
         configFile: './public/javascripts/spec/e2e/conf.js',
-        noColor: false,
-        debug: false,
-        args: {}
-      },
-      e2e: {
-        options: {
-          keepAlive: false
-        }
-      },
-      continuous: {
-        options: {
-          keepAlive: true
-        }
-      }
-    },
-
-    protractor_webdriver: {
-      your_target: {
-        options: {
-          path: './node_modules/protractor/bin/',
-          command: 'webdriver-manager start'
-        },
-      },
-    },
-
-    express: {
-      options: {
-        server: path.resolve('./app')
+        keepAlive: true
       },
       run: {
-
+      }
+    },
+    protractor_webdriver: {
+      start: {
+        options: {
+          path: 'node_modules/protractor/bin/',
+          command: 'webdriver-manager start'
+        }
       }
     }
-
-
-
-
   });
 
+  grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-protractor-webdriver');
-  grunt.loadNpmTasks('grunt-express-server');
-  grunt.registerTask('default', ['karma']);
-  grunt.registerTask('e2e-test', ['express', 'protractor_webdriver', 'protractor:e2e']);
+  grunt.registerTask('e2e', ['express:test', 'protractor_webdriver', 'protractor']);
+
 };
