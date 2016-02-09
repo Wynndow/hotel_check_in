@@ -1,1 +1,1 @@
-var hotelCheckIn = angular.module('checkIn', []);
+var hotelCheckIn = angular.module('checkIn', ["firebase"]);
