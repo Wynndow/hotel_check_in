@@ -19,12 +19,14 @@ module.exports = function(config) {
       '../bower_components/angular-route/angular-route.js',
       '../bower_components/angular-resource/angular-resource.js',
       '*.js',
-      'spec/**/*.spec.js'
+      'controllers/*.js',
+      'spec/*.spec.js'
     ],
 
 
     // list of files to exclude
     exclude: [
+      'e2e/*.js'
     ],
 
 
