@@ -15,5 +15,4 @@ describe('app-version directive', function() {
       expect(element.text()).toEqual('TEST_VER');
     });
   });
-
 });

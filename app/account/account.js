@@ -30,6 +30,7 @@
               $scope.msg = 'Password changed';
             }, function(err) {
               $scope.err = err;
+
             });
         }
       };
@@ -41,7 +42,6 @@
         var oldEmail = profile.email;
         Auth.$changeEmail({oldEmail: oldEmail, newEmail: newEmail, password: pass})
           .then(function() {
-            // store the new email address in the user's profile
             return fbutil.handler(function(done) {
               fbutil.ref('users', user.uid, 'email').set(newEmail, done);
             });
@@ -66,7 +66,6 @@
     $routeProvider.whenAuthenticated('/account', {
       templateUrl: 'account/account.html',
       controller: 'AccountCtrl'
-    })
+    });
   }]);
-
 })(angular);

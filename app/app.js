@@ -5,7 +5,8 @@ angular.module('myApp', [
     'myApp.security',
     'myApp.home',
     'myApp.account',
-    'myApp.login'
+    'myApp.login',
+    'myApp.photo'
   ])
 
   .config(['$routeProvider', function ($routeProvider) {
@@ -15,7 +16,6 @@ angular.module('myApp', [
   }])
 
   .run(['$rootScope', 'Auth', function($rootScope, Auth) {
-    // track status of authentication
     Auth.$onAuth(function(user) {
       $rootScope.loggedIn = !!user;
     });

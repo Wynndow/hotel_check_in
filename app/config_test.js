@@ -1,5 +1,6 @@
 'use-strict';
 
+
 describe('config', function() {
   beforeEach(module('myApp.config'));
 

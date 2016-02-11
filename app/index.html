@@ -17,6 +17,7 @@
     <li><a href="#/home">home</a></li>
     <li ng-hide="loggedIn"><a href="#/login">login</a></li>
     <li ng-show="loggedIn"><a href="#/account">account</a></li>
+    <li ng-show="loggedIn"><a href="#/photo">photo</a></li>
   </ul>
 
   <div ng-view></div>
@@ -42,9 +43,15 @@
   <script src="components/ngcloak/ngcloak-decorator.js"></script>
   <script src="components/reverse/reverse-filter.js"></script>
   <script src="components/security/security.js"></script>
+  <script src="components/pictureStore/storeFactory.js"></script>
+  <script src="photo/webcam.js"></script>
+  <script src="photo/streamConfig.js"></script>
+
 
   <script src="home/home.js"></script>
   <script src="account/account.js"></script>
   <script src="login/login.js"></script>
+  <script src="photo/photo.js"></script>
+
 </body>
 </html>

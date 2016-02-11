@@ -1,4 +1,5 @@
 'use-strict';
+
 describe('myApp.account', function() {
   beforeEach(function() {
     module('myApp');

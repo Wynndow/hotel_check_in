@@ -11,13 +11,14 @@
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.whenAuthenticated = function (path, route) {
         securedRoutes.push(path);
+
         route.resolve = route.resolve || {};
         route.resolve.user = ['Auth', function (Auth) {
           return Auth.$requireAuth();
         }];
         $routeProvider.when(path, route);
         return this;
-      }
+      };
     }])
 
     .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath',

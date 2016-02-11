@@ -11,6 +11,15 @@ Problem statement
 Checking into a hotel is a slow, archaic and tedious process.
 ```
 
+Installation instructions
+-----
+`$git clone`
+`$cd hotel_check_in`
+`$npm install`
+`$npm run test`
+`$npm start`
+ visit `localhost://8080/app/index.html`
+
 Guest User Stories
 -----
 ```

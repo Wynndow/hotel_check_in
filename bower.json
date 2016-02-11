@@ -1,21 +1,34 @@
 {
-  "name": "Hotelligence",
-  "description": "A mobile check-in system for the hospitality industry",
-  "version": "0.1.0",
+<<<<<<< HEAD
+  "name": "hotel_check_in",
+  "description": "Final project",
+  "main": "",
+  "authors": [
+    "Chris Wynne <chris.wynndow@gmail.com>"
+  ],
   "license": "MIT",
-  "private": true,
+  "homepage": "https://github.com/Wynndow/hotel_check_in",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6",
     "angular": "^1.5.0",
-    "angular-route": "^1.5.0",
-    "angular-loader": "^1.5.0",
-    "angular-mocks": "^1.5.0",
-    "html5-boilerplate": "~4.3.0",
+    "angular-resource": "^1.5.0",
     "firebase": "^2.4.0",
-    "angularfire": "^1.0.0",
-    "mockfirebase": "~0.10.3"
+    "angular-route": "^1.5.0",
+    "angular-loader": "~1.3.8",
+    "html5-boilerplate": "~4.3.0",
+    "angularfire": "~1.0.0"
   },
-  "resolutions": {
-    "angular": "^1.0.8",
-    "firebase": "2.x.x"
+  "devDependencies": {
+    "angular-mocks": "^1.5.0",
+    "mockfirebase": "~0.10.3"
   }
 }

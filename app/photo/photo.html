@@ -1,0 +1,15 @@
+   <!-- # Remember to inject storeFactory service -->
+
+      <h1> Please submit a picture of you with your passport </h1>
+        <section id="camera_image"></section>
+
+      <section ng-hide="moreButtons">
+        <button ng-click="takePhoto()">Take photo</button>
+      </section>
+      <section ng-show="moreButtons">
+        <button ng-click="retakePhoto()">Retake photo</button>
+        <button ng-click="storePhoto()">Save photo</button>
+      </section>
+
+      <script src="webcam.js"></script>
+      <script src="streamConfig.js"></script>
