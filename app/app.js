@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.userDash',
   'myApp.photo'
 
+
 ])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -19,8 +20,22 @@ angular.module('myApp', [
   });
 }])
 
-.run(['$rootScope', 'Auth', function($rootScope, Auth) {
+.run(['$rootScope', '$location', 'Auth', '$firebaseObject', function($rootScope, $location, Auth, $firebaseObject) {
+
+  var thisUserType;
+  var uid;
   Auth.$onAuth(function(user) {
+
     $rootScope.loggedIn = !!user;
+    console.log(user.auth.uid);
+    uid = user.auth.uid;
+    var ref = new Firebase('https://hotel-check-in.firebaseio.com/');
+    console.log(uid);
+    $firebaseObject(ref.child('users').child(uid).child('userType')).$loaded().then(function(userType) {
+      var thisUserType = userType.$value;
+      console.log(thisUserType);
+      $rootScope.userType = thisUserType;
+    });
+
   });
 }]);

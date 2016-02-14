@@ -7,24 +7,34 @@
   <title>Hotelligence</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css" />
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css"> -->
+  <!-- <link rel="stylesheet" href="app.css" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="login/login.css">
+  <!-- <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script> -->
 </head>
 
 <body ng-cloak>
 
-  <ul class="menu">
-    <li><a href="#/home">home</a></li>
-    <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
-    <li ng-hide="loggedIn"><a href="#/hotelLogin">Hotel login</a></li>
-    <li ng-show="loggedIn"><a href="#/account">account</a></li>
-    <li ng-show="loggedIn"><a href="#/userDash">Dashboard</a></li>
-    <li ng-show="loggedIn"><a href="#/hotelDash">Hotelligence Dashboard</a></li>
-    <li ng-show="loggedIn"><a href="#/photo">photo</a></li>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <p class="navbar-text navbar-right">Signed in as {{profile.email}}</p>
 
-  </ul>
+      <ul class="menu nav navbar-nav">
+        <a class="navbar-brand" href="#/home">Hotelligence</a>
+        <li ng-hide="loggedIn"><a href="#/login">User login</a></li>
+        <li ng-hide="loggedIn"><a href="#/hotelLogin">Hotel login</a></li>
+        <li ng-show="loggedIn"><a href="#/account">account</a></li>
+        <li ng-hide="userType != 'guestUser' || !loggedIn"><a href="#/userDash">Dashboard</a></li>
+        <li ng-hide="userType != 'hotelUser' || !loggedIn"><a href="#/hotelDash">Hotelligence Dashboard</a></li>
+        <li ng-hide="userType != 'guestUser' || !loggedIn"><a href="#/photo">photo</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
 
   <div ng-view></div>
 
