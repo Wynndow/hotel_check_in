@@ -41,25 +41,14 @@ module.exports = function(grunt) {
           base: ['app']
         }
       }
-    },
-    coveralls: {
-      options: {
-       debug: true,
-       coverageDir: 'app',
-       dryRun: true,
-       force: true,
-       recursive: true
-      },
-
     }
+
   });
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-karma-coveralls');
-  grunt.registerTask('coveralls', ['coveralls']);
   grunt.registerTask('unit', ['karma']);
   grunt.registerTask('e2e', ['connect', 'protractor_webdriver', 'protractor', ]);
 

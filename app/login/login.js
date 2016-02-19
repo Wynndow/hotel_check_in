@@ -1,5 +1,5 @@
 "use strict";
-angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
+angular.module('hotelligence.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/login', {
@@ -12,6 +12,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
     $scope.email = null;
     $scope.pass = null;
     $scope.confirm = null;
+    $scope.userType = 'guestUser';
     $scope.createMode = false;
 
     $scope.login = function(email, pass) {
@@ -29,15 +30,15 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       if( assertValidAccountProps() ) {
         var email = $scope.email;
         var pass = $scope.pass;
-
-        Auth.$createUser({email: email, password: pass})
+        var thisUserType = $scope.userType;
+        Auth.$createUser({email: email, password: pass, userType: thisUserType })
           .then(function() {
-            return Auth.$authWithPassword({ email: email, password: pass });
+            return Auth.$authWithPassword({ email: email, password: pass, userType: thisUserType  });
           })
           .then(function(user) {
             var ref = fbutil.ref('users', user.uid);
             return fbutil.handler(function(cb) {
-              ref.set({email: email, name: name||firstPartOfEmail(email)}, cb);
+              ref.set({email: email, name: name||firstPartOfEmail(email), userType: thisUserType}, cb);
             });
           })
           .then(function() {

@@ -3,7 +3,7 @@
 
   var securedRoutes = [];
 
-  angular.module('myApp.security', ['ngRoute', 'firebase.auth', 'myApp.config'])
+  angular.module('hotelligence.security', ['ngRoute', 'firebase.auth', 'hotelligence.config'])
 
     .config(['$routeProvider', function ($routeProvider) {
     }])

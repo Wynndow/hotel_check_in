@@ -1,8 +1,11 @@
 
-describe('myApp.home', function() {
-  beforeEach(module('myApp.home'));
+describe('hotelligence.home', function() {
+  beforeEach(function() {
+    module('hotelligence');
+    module('hotelligence.home');
+  });
 
-  describe('HomeCtrl', function() {
+  describe('Home Ctrl', function() {
     var homeCtrl, $scope;
     beforeEach(function() {
       module(function($provide) {

@@ -1,9 +1,9 @@
 'use-strict';
 
-describe('myApp.account', function() {
+describe('hotelligence.account', function() {
   beforeEach(function() {
-    module('myApp');
-    module('myApp.account');
+    module('hotelligence');
+    module('hotelligence.account');
   });
 
   describe('AccountCtrl', function() {

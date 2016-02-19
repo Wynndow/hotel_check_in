@@ -1,5 +1,5 @@
 "use strict";
-angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
+angular.module('hotelligence.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/hotelLogin', {
@@ -13,8 +13,10 @@ angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute
     $scope.pass = null;
     $scope.confirm = null;
     $scope.createMode = false;
+    $scope.userType = 'hotelUser';
 
     $scope.login = function(email, pass) {
+
       $scope.err = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
@@ -29,16 +31,17 @@ angular.module('myApp.hotel_login', ['firebase.utils', 'firebase.auth', 'ngRoute
       if( assertValidAccountProps() ) {
         var email = $scope.email;
         var pass = $scope.pass;
-
-        Auth.$createUser({email: email, password: pass})
+        var thisUserType = $scope.userType;
+        Auth.$createUser({email: email, password: pass, userType: thisUserType})
           .then(function() {
-            return Auth.$authWithPassword({ email: email, password: pass });
+            return Auth.$authWithPassword({ email: email, password: pass, userType: thisUserType  });
           })
           .then(function(user) {
-            var ref = fbutil.ref('hotels', user.uid);
+            var ref = fbutil.ref('users', user.uid);
             return fbutil.handler(function(cb) {
-              ref.set({email: email, name: name||firstPartOfEmail(email)}, cb);
+              ref.set({email: email, name: name||firstPartOfEmail(email),userType: thisUserType}, cb);
             });
+            
           })
           .then(function() {
             $location.path('/hotelDash');

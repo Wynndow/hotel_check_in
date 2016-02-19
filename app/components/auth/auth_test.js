@@ -5,11 +5,14 @@ describe('Auth', function() {
     module('firebase.auth');
   });
 
-  it('should return $firebaseAuth instance', function() {
+  xit('should return $firebaseAuth instance', function() {
     inject(function (Auth, $firebaseAuth) {
       var ref = new MockFirebase();
       var testInst = $firebaseAuth(ref);
       expect(Auth.prototype === testInst.prototype).toBe(true);
     });
   });
+
+
+
 });

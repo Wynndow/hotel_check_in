@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp')
+angular.module('hotelligence')
   .filter('reverse', function() {
     return function(items) {
       return items.slice().reverse();

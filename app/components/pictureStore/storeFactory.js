@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.pictureStore', ['firebase', 'firebase.utils', 'firebase.auth'])
+angular.module('hotelligence.pictureStore', ['firebase', 'firebase.utils', 'firebase.auth'])
   .factory('Store', function() {
     return {
       saveInDb: function() {
@@ -12,6 +12,7 @@ angular.module('myApp.pictureStore', ['firebase', 'firebase.utils', 'firebase.au
             image: data
           });
         });
-      }
+      },
+
     };
   });

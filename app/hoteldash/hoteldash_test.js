@@ -1,8 +1,11 @@
 
-describe('myApp.home', function() {
-  beforeEach(module('myApp.home'));
+describe('hotelligence.hoteldash', function() {
+  beforeEach(function() {
+    module('hotelligence');
+    module('hotelligence.hoteldash');
+  });
 
-  describe('HomeCtrl', function() {
+  describe('Hotel Dash Ctrl', function() {
     var homeCtrl, $scope;
     beforeEach(function() {
       module(function($provide) {
@@ -10,7 +13,7 @@ describe('myApp.home', function() {
       });
       inject(function($controller) {
         $scope = {};
-        homeCtrl = $controller('HomeCtrl', {$scope: $scope});
+        ctrl = $controller('hoteldashController', {$scope: $scope});
       });
     });
 

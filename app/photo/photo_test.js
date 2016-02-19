@@ -1,8 +1,8 @@
 describe('photoController', function() {
 
   beforeEach(function() {
-    module('myApp');
-    module('myApp.photo');
+    module('hotelligence');
+    module('hotelligence.photo');
   });
   var ctrl;
 

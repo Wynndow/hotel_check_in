@@ -14,3 +14,6 @@ before_script:
   - npm install http-server -g
   - npm start > /dev/null &
   - sleep 3
+
+after_success:
+  - npm run coveralls

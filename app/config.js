@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.config', [])
+angular.module('hotelligence.config', [])
 
   .constant('version', '0.1.0')
 

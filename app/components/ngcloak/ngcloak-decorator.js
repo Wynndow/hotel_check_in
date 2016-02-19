@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myApp')
+angular.module('hotelligence')
   .config(['$provide', function($provide) {
     $provide.decorator('ngCloakDirective', ['$delegate', 'Auth',
       function($delegate, Auth) {

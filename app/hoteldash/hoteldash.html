@@ -1,6 +1,54 @@
-<h2>Welcome to your Hotelligence Dashboard</h2>
 
-<p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p>
-<p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+<section ng-controller="DataTableCtrl as showCase" ng-init="init(booking.value)">
 
-<table></table>
+
+<div class="jumbotron">
+  <div class="text-center">
+    <h2>Welcome to your Hotelligence Dashboard</h2>
+    <p>View your guest booking details and status below!</p>
+  </div>
+  <p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+</div>
+
+<modal title="Guest docs" visible="showModal" style="overflow:hidden;position:auto;">
+  <img ng-src="{{showCase.images}}" style="width:100%;height:100%">
+</modal>
+
+<div>
+  <table class="row-border hover" datatable="ng" ng-init"collectBookingUserUids()">
+
+
+    <thead>
+      <tr>
+
+        <th class="text-center">Name</th>
+        <th class="text-center">Docs</th>
+        <th class="text-center">Photo</th>
+        <th class="text-center">Room Number</th>
+        <th class="text-center">stay Duration</th>
+        <th class="text-center">Payment Status</th>
+        <th class="text-center">Booking Reference</th>
+        <th class="text-center">room ready</th>
+        <th class="text-center">Checked In</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr  ng-change=""  ng-repeat="booking in showCase.bookings "  ng-model="booking">
+
+        <td>{{ booking.name}}</td>
+        <td ng-click="toggleModal(); showCase.getImageAvatar(booking.guestUid)" class="{{booking.guestUid}} text-center"><span class="glyphicon glyphicon-camera"></span></td>
+        <td class="text-center"><img ng-src="{{booking.photos}}" style="width:80px"/> </td>
+        <td e-ng-model="booking.room_number"
+         e-ng-click="showCase.checkIfEnterKeyWasPressed(booking.room_number,$event)" editable-text="booking.room_number" class="text-center">{{ booking.room_number || 'empty' }}</td>
+        <td class="text-center">{{ booking.stay_duration }}</td>
+        <td class="text-center">{{ booking.payment_status }}</td>
+        <td class="text-center">{{ booking.booking_reference }}</td>
+        <td class="text-center">{{ booking.room_ready }}</td>
+        <td ng-change="toggleModal()" ng-model="booking.checked_in" class="text-center">{{ booking.checked_in }}</td>
+
+    </tbody>
+  </table>
+</div>
+</section>

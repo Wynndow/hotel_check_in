@@ -3,7 +3,7 @@
 describe('app-version directive', function() {
   beforeEach(function() {
     module('mock.firebase');
-    module('myApp');
+    module('hotelligence');
   });
 
   it('should print current version', function() {

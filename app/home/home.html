@@ -1,9 +1,75 @@
-<h2>Home</h2>
+<header class="jumbotron">
 
-<p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p>
-<p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+  <div class="text-center">
+    <h1>Hotelligence</h1>
+    <p>Get your paperwork out the way before you stay!</p>
+      <a ng-show="loggedIn" href="#/userDash" class="btn btn-lg btn-primary">View your dashboard</a>
+  </div>
 
-<input ng-model="syncedValue.$value" type="text" ng-change="syncedValue.$save()" /> <b>{{syncedValue.$value}}</b>
+  <p class="status text-center" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+</header>
 
-<p>Open <a ng-href="{{FBURL}}/syncedValue" target="_blank">Forge</a> or a <a target="_blank" href="#/">new window</a> to see this input update in real time.</p>
 
+<div class="row">
+  <div class="col-lg-12">
+    <h3>How it works</h3>
+  </div>
+</div>
+
+<div class="row text-center">
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img src="http://phpiratesbooster.com/clients/867602/6487065_org.jpg" alt="">
+      <div class="caption">
+        <h3>Sign up and sign in!</h3>
+        <p>Hotelligence allows hotels to spend less time dealing with admin and more time focused on you</p>
+        <p>
+          <a ng-hide="loggedIn" href="#/login" class="btn btn-lg btn-primary">Get started!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+
+      <img src="https://images.unsplash.com/19/desktop.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=8804c35cd41ea92a7906bfed8cc48a05" alt="">
+      <div class="caption">
+        <h3>Submit your Id</h3>
+        <p>Take a quick photo of yourself and your ID, away with scanning passports in the back office! </p>
+        <p>
+          <a ng-hide="loggedIn" href="#/login" class="btn btn-lg btn-primary">Get started!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=84df46d6f81dcd51f7e04982f59e74e4" alt="">
+      <div class="caption">
+        <h3>Download mobile app</h3>
+        <p>With our App on your smartphone, the hotel will know you've arrived as you walk through the door!</p>
+        <p>
+          <a ng-hide="loggedIn" href="#/login" class="btn btn-lg btn-primary">Get started!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b5790ba0a95c304beb29e6b3199381e9" alt="">
+      <div class="caption">
+        <h3>Fly through checkin!</h3>
+        <p>With all your details verified in advance, grab your room key from the waiting receptionist and kickback in your room..</p>
+        <p>
+          <a ng-hide="loggedIn" href="#/login" class="btn btn-lg btn-primary">Get started!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</div>

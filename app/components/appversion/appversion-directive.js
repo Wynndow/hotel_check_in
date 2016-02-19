@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp')
+angular.module('hotelligence')
 
   .directive('appVersion', ['version', function(version) {
     return function(scope, elm) {

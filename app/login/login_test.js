@@ -1,11 +1,11 @@
 
-describe('myApp.login', function() {
+describe('hotelligence.login', function() {
   beforeEach(function() {
-    module('myApp');
-    module('myApp.login');
+    module('hotelligence');
+    module('hotelligence.login');
   });
 
-  describe('LoginCtrl', function() {
+  describe('User Login Ctrl', function() {
     var loginCtrl, $scope;
     beforeEach(function() {
       inject(function($controller) {

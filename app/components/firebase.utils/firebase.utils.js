@@ -1,5 +1,5 @@
 
-angular.module('firebase.utils', ['firebase', 'myApp.config'])
+angular.module('firebase.utils', ['firebase', 'hotelligence.config'])
    .factory('fbutil', ['$window', 'FBURL', '$q', function($window, FBURL, $q) {
       "use strict";
 

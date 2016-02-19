@@ -4,6 +4,6 @@ describe('User Login', function() {
    });
 
    it('should render user login when user navigates to /login', function() {
-      expect(element.all(by.css('[ng-view] h2')).first().getText()).toMatch(/Login Page/);
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).toMatch(/Guest Login/);
    });
 });

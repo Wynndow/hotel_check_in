@@ -4,6 +4,6 @@ describe('Hotel Login', function() {
    });
 
    it('should render hotel login when user navigates to /hotelLogin', function() {
-      expect(element.all(by.css('[ng-view] h2')).first().getText()).toMatch(/Login Page/);
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).toMatch(/Hotel Login/);
    });
 });

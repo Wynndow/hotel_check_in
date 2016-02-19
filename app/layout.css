@@ -1,0 +1,41 @@
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-btn {
+  margin-left: 15px;
+  margin-right: auto;
+}
+.container {
+  overflow: hidden;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand > img {
+  height: 100%;
+}
+* {
+  border-radius: 0 !important;
+}
+input[type="button"], input[type="submit"], .btn {
+  color: rgb(230, 232, 233) !importantrgb(255, 255, 255);
+  background-color: #43bdbc !important;
+  border-color: #43bdbc !important;
+  /*font: bold 84% 'trebuchet ms',helvetica,sans-serif; */
+  /*background-color:#fed;
+    border:1px solid;
+    border-color: #696 #363 #363 #696; */
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+tbody tr:hover {
+  background-color: #43bdbc !important;
+  color: rgb(230, 232, 233) !important;
+}
+editable editable-click {
+  color: #43bdbc !important;
+}
+editable editable-click:hover {
+  color: rgb(230, 232, 233) !important;
+}

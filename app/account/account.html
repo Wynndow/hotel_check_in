@@ -12,7 +12,7 @@
 
         <label>
             <span>Email:</span>
-            <br />{{profile.email}}
+            {{profile.email}}
         </label>
     </fieldset>
 </form>
@@ -36,7 +36,7 @@
             <input type="password" ng-keypress="clear()" ng-model="confirm"/>
         </label>
 
-        <button ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
+        <button class="btn btn-info" ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
 
         <p class="error" ng-show="err">{{err}}</p>
         <p class="good" ng-show="msg">{{msg}}</p>
@@ -57,11 +57,11 @@
             <input type="password" ng-keypress="clear()" ng-model="pass"/>
         </label>
 
-        <button ng-click="changeEmail(pass, newEmail)">update email</button>
+        <button class="btn btn-info" ng-click="changeEmail(pass, newEmail)">update email</button>
 
         <p class="error" ng-show="emailerr">{{emailerr}}</p>
         <p class="good" ng-show="emailmsg">{{emailmsg}}</p>
     </fieldset>
 </form>
 
-<button ng-click="logout()">Log Out</button>
+<!-- <button class="btn btn-warning" ng-click="logout()">Log Out</button> -->

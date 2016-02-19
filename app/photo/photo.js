@@ -2,7 +2,7 @@
   "use strict";
 
 
-  var app = angular.module('myApp.photo', ['firebase', 'firebase.utils', 'firebase.auth', 'myApp.pictureStore', 'ngRoute']);
+  var app = angular.module('hotelligence.photo', ['firebase', 'firebase.utils', 'firebase.auth', 'hotelligence.pictureStore', 'ngRoute']);
 
   app.controller('photoController', ['Store', function(Store){
     var self = this;
